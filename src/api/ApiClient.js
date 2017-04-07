@@ -31,8 +31,9 @@ export class ApiClient {
   static getRequestHeaders() {
     return new Headers({
       Accept: 'application/json',
+      Origin: process.env.NODE_ENV === 'production' ? 'https://ida-t.github.io/' : null,
       // 'Content-Type': 'application/json',
-      //'X-Requested-With': 'XMLHttpRequest',
+      // 'X-Requested-With': 'XMLHttpRequest',
     });
   }
 
